@@ -20,7 +20,58 @@
             font-family: "Nunito";
             color: #1a1a1a;
         }
-
+        .loading .itemPostContent_img,
+        .loading .post_inf_readTime,
+        .loading .post_inf_postTime,
+        .loading .post_inf_des,
+        .loading .post_inf_title,
+        .loading .post_author_name,
+        .loading .post_author_avt{
+            background: #b8e3ff;
+        }
+        .darkmode.loading .itemPostContent_img,
+        .darkmode.loading .post_inf_readTime,
+        .darkmode.loading .post_inf_postTime,
+        .darkmode.loading .post_inf_des,
+        .darkmode.loading .post_inf_title,
+        .darkmode.loading .post_author_name,
+        .darkmode.loading .post_author_avt{
+            background: #475569;
+        }
+        .loading .post_author_avt{
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+        }
+        .loading .post_author_name{
+            width: 38%;
+            height: 20px;
+            border-radius: 100px;
+        }
+        .loading .post_inf_title{
+            height: 30px;
+            width: 80%;
+            border-radius: 100px;
+        }
+        .loading .post_inf_des{
+            height: 60px;
+            width: 100%;
+            border-radius: 8px;
+        }
+        .loading .post_inf_postTime{
+            height: 20px;
+            width: 22%;
+            border-radius: 100px;
+        }
+        .loading .post_inf_readTime{
+            height: 20px;
+            width: 22%;
+            border-radius: 100px;
+        }
+        .loading .post_interact,
+        .loading .post_inf_seperateDot{
+            color: #475569;
+        }
         .header {
             box-shadow: 0 2px 4px 0 rgb(219, 219, 219);
         }
@@ -90,10 +141,9 @@
         }
 
         .border_top {
-            border-top: 1px solid #e8e8e8;
+            border-top: 1px solid rgba(232, 232, 232, 0.2);
         }
 
-        .tutorial_start_btn,
         .btn {
             box-shadow: 0px 0px 8px #38B6FF;
         }
@@ -114,6 +164,13 @@
             animation: appear ease-in 0.3s;
         }
 
+        .nav_onTablet {
+            background: rgba(0, 0, 0, 0.4);
+            
+        }
+        .nav_onTablet ul{
+            animation: surfing-reverse ease-in 0.05s;
+        }
         @keyframes surfing {
             0% {
                 transform: translateX(100%);
@@ -123,7 +180,15 @@
                 transform: translateX(0);
             }
         }
+        @keyframes surfing-reverse {
+            0% {
+                transform: translateX(-100%);
+            }
 
+            100% {
+                transform: translateX(0);
+            }
+        }
         @keyframes appear {
             0% {
                 transform: translateY(100%);
@@ -194,6 +259,9 @@
         .darkmode .search_bar::placeholder {
             color: #ccc
         }
+        .darkmode .nav_onTablet ul{
+            background: #3D4048;
+        }
         .darkmode .post{
             background: #1f232b;
         }
@@ -203,15 +271,105 @@
         .darkmode .post_suggested_topic:hover{
             background: #e9f6ff;
         }
+        @media screen and (max-width: 900px) {
+            .suggestedTopic,
+            .header_signUp_btn,
+            .logo_text_onHeader,
+            .viewMyRank_btn {
+                display: none;
+            }
+            .nav_open_btn{
+                display: inline;
+            }
+            .change_theme_mode_btn {
+                margin-right: 16px;
+            }
+
+            .body {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 0 8px;
+            }
+
+            .body>div {
+                margin: 0;
+            }
+
+            .footer>ul {
+                display: block;
+            }
+
+            .footer>ul li:nth-child(2) {
+                margin: 32px 0;
+            }
+
+            .footer>ul li {
+                width: 100%;
+            }
+
+            .footer {
+                padding: 32px;
+            }
+            .listPost{
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .suggestedTopic,
+            .slider_modal,
+            .search_bar_wrapper,
+            .logo_text_onHeader,
+            .viewMyRank_btn {
+                display: none;
+            }
+
+            .change_theme_mode_btn {
+                margin-right: 16px;
+            }
+
+            .body {
+                width: 100%;
+            }
+
+            .footer>ul {
+                display: block;
+                margin-bottom: 64px;
+            }
+
+            .footer>ul li:nth-child(2) {
+                margin: 32px 0;
+            }
+
+            .slider_text {
+                margin: 0;
+            }
+
+            .slider_text p:nth-child(1) {
+                font-size: 40px;
+            }
+
+            .footer {
+                padding: 16px;
+            }
+
+            .slider_background {
+                height: 100%;
+            }
+            .listPost{
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
-<body>
+<body class="loading">
     <header
         class="header flex fixed top-0 left-0 right-0 py-[8px] border-solid border-[1px] border-[#e8ebed] items-center px-[20px] justify-between bg-[#fff] z-[100] box-">
         <div class="flex items-center">
             <img src="../assets/chemiscare_logo-1.png" alt="" class="logo_img w-[44px] h-[44px] mr-[8px] rounded-[8px]">
-            <p class="font-bold text-[24px] logo_text">Chemiscare</p>
+            <p class="font-bold text-[24px] logo_text logo_text_onHeader">Chemiscare</p>
+            <i class="fa-solid fa-bars text-[24px] hidden nav_open_btn"></i>
         </div>
         <div
             class="w-[400px] flex items-center border-[#e8e8e8] border-[2px] border-solid rounded-[20px] pl-[8px] pr-[16px] overflow-hidden search_bar_wrapper">
@@ -225,10 +383,14 @@
                     class="border-solid border-[2px] h-[20px] w-[20px] rounded-[50%] change_theme_mode_btn cursor-pointer flex items-center justify-center">
                     <i class="fa-solid fa-moon theme_mode_dark"></i>
                 </div>
+                <p class="font-semibold mx-[16px] header_signUp_btn">Đăng kí</p>
                 <p
-                    class="font-semibold mx-[16px] header_myRank_btn text-[#1a1a1a] cursor-pointer bg-[#E0F2FE] px-[16px] py-[6px] rounded-[20px]">
+                    class="font-semibold text-[#1a1a1a] cursor-pointer bg-[#E0F2FE] px-[16px] py-[6px] rounded-[20px]">
+                    Đăng nhập</p>
+                <p
+                    class="font-semibold mx-[16px] text-[#1a1a1a] cursor-pointer bg-[#E0F2FE] px-[16px] py-[6px] rounded-[20px] viewMyRank_btn hidden">
                     Xếp hạng của tôi</p>
-                <div class="relative user_menu_wrapper">
+                <div class="relative user_menu_wrapper hidden">
                     <img class="w-[44px] h-[44px] cursor-pointer rounded-[50%]"
                         src="https://i.pinimg.com/564x/34/87/50/3487501df643bc49fe5e8cbd6fc0e52b.jpg" alt="">
                     <ul class="hidden absolute user_menu rounded-[16px] py-[8px] px-[16px] right-0 w-[240px] bg-[#fff]">
@@ -262,43 +424,74 @@
             </div>
         </div>
     </header>
-    <div class="flex mt-[100px] w-[90%] mb-[8px]">
-        <div class="">
+    <div class="flex mt-[100px] w-[90%] mb-[8px] body">
+        <nav class="nav_main">
             <ul class="p-[16px] flex flex-col items-center sticky left-0 top-[100px]">
                 <li
                     class="w-[44px] h-[44px] flex items-center justify-center mb-[8px] bg-[#1473e6] rounded-[50%] border-[#1473e6] border-solid border-[1px] text-[#fff] cursor-pointer">
                     <i class="fa-solid fa-plus"></i>
                 </li>
                 <li
-                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e9f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
+                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item active">
                     <i class="fa-solid fa-house text-[18px] mb-[4px]"></i>
                     <p class="text-[12px] nav_title font-bold">Home</p>
                 </li>
                 <li
-                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e9f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
+                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
                     <i class="fa-solid fa-calendar text-[18px] mb-[4px]"></i>
                     <p class="text-[12px] nav_title font-bold">Lịch</p>
                 </li>
                 <li
-                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e9f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
+                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
                     <i class="fa-solid fa-scale-balanced text-[18px] mb-[4px]"></i>
                     <p class="text-[12px] nav_title font-bold">Thể lệ</p>
                 </li>
                 <li
-                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e9f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
+                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
                     <i class="fa-solid fa-ranking-star text-[18px] mb-[4px]"></i>
                     <p class="text-[12px] nav_title font-bold">Hạng</p>
                 </li>
                 <li
-                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e9f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item active">
+                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
                     <i class="fa-solid fa-circle-question text-[18px] mb-[4px]"></i>
                     <p class="text-[12px] nav_title font-bold">Hỏi đáp</p>
                 </li>
                 <span class="nav_item_wrapper w-[68px] h-[68px] bg-[#E0F2FE] rounded-[16px] absolute"></span>
             </ul>
-        </div>
+        </nav>
+        <nav class="fixed top-0 bottom-0 left-0 right-0 z-[100] nav_onTablet hidden">
+            <ul class="w-[70%] bg-[#E0F2FE] h-full p-[32px]">
+                <li>
+                    <i class="nav_close_btn fa-solid fa-xmark text-[24px] cursor-pointer py-[10px] pl-[10px]"></i>
+                </li>
+                <li class="flex active my-[32px]">
+                    <i class="fa-solid fa-house text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Home</p>
+                </li>
+                <li class="flex my-[32px]">
+                    <i class="fa-solid fa-calendar text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Lịch</p>
+                </li>
+                <li class="flex my-[32px]">
+                    <i class="fa-solid fa-scale-balanced text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Thể lệ</p>
+                </li>
+                <li class="flex my-[32px]">
+                    <i class="fa-solid fa-ranking-star text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Hạng</p>
+                </li>
+                <li class="flex text-[40px] my-[32px]">
+                    <i class="fa-solid fa-circle-question text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Hỏi đáp</p>
+                </li>
+                <li class="flex text-[40px] my-[32px]">
+                    <i class="fa-solid fa-circle-question text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Viết bài</p>
+                </li>
+            </ul>
+        </nav>
         <div class="ml-[40px] w-full pb-[64px]">
-            <div class="mt-[32px]">
+            <div class="">
                 <div class="w-[100%] text-left mb-[60px]">
                     <p class="font-[900] text-[38px]">Bài viết nổi bật</p>
                     <p>Tổng hợp các bài viết chia sẻ về kinh nghiệm tự học hóa, cảm xúc trong quá trình học.</p>
@@ -306,17 +499,14 @@
                 <div class="w-full flex">
                     <ul class="flex flex-col justify-start w-[60%] listPost">
                         <li
-                            class="my-[8px] w-[100%] rounded-[16px] p-[24px] bg-[#E0F2FE] post">
+                            class="my-[8px] w-[100%] rounded-[16px] p-[24px] bg-[#E0F2FE] post animate-pulse">
                             <div class="flex justify-between">
-                                <div class="flex items-center cursor-pointer">
-                                    <div class="mr-[4px]">
-                                        <img class="w-[28px] h-[28px] object-cover rounded-[50%]"
-                                            src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                                            alt="">
+                                <div class="flex items-center cursor-pointer flex-grow">
+                                    <div class="mr-[4px] post_author_avt">
                                     </div>
-                                    <p class="font-medium">Trịnh Văn Sơn</p>
+                                    <p class="font-medium post_author_name"></p>
                                 </div>
-                                <div class="flex items-center">
+                                <div class="flex items-center post_interact">
                                     <i class="cursor-pointer fa-regular fa-bookmark mr-[8px] post_Reaction"></i>
                                     <i class="cursor-pointer fa-solid fa-bookmark mr-[8px] text-[#d54253] post_Reaction__active"
                                         style="display: none;"></i>
@@ -334,30 +524,25 @@
                             </div>
                             <div class="mt-[8px] mb-[16px]">
                                 <div>
-                                    <p class="text-[20px] font-[700] cursor-pointer">Cách sử dụng
-                                        Routing trong ReactJS</p>
-                                    <p class="mt-[4px] leading-[1.6] text-[15px] font-light">Hôm nay chúng ta sẽ cùng
-                                        nhau tìm hiểu cách routing trong reactjs qua thư viện react-router-dom</p>
+                                    <p class="text-[20px] font-[700] cursor-pointer post_inf_title"></p>
+                                    <p class="mt-[4px] leading-[1.6] text-[15px] font-light post_inf_des"></p>
                                 </div>
                             </div>
                             <div class="flex items-center">
-                                <p class="opacity-[0.9]">12 ngày trước</p>
-                                <i class="opacity-[0.9] fa-solid fa-circle text-[4px] mx-[8px]"></i>
-                                <p class="opacity-[0.9]">5 phút đọc</p>
+                                <p class="opacity-[0.9] post_inf_postTime"></p>
+                                <i class="opacity-[0.9] fa-solid fa-circle text-[4px] mx-[8px] post_inf_seperateDot"></i>
+                                <p class="opacity-[0.9] post_inf_readTime"></p>
                             </div>
                         </li>
                         <li
-                            class="my-[8px] w-[100%] rounded-[16px] p-[24px] bg-[#E0F2FE] post">
+                            class="my-[8px] w-[100%] rounded-[16px] p-[24px] bg-[#E0F2FE] post animate-pulse">
                             <div class="flex justify-between">
-                                <div class="flex items-center">
-                                    <div class="mr-[4px]">
-                                        <img class="w-[28px] h-[28px] object-cover rounded-[50%]"
-                                            src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                                            alt="">
+                                <div class="flex items-center flex-grow">
+                                    <div class="mr-[4px] post_author_avt">
                                     </div>
-                                    <p class="font-medium">Trịnh Văn Sơn</p>
+                                    <p class="font-medium post_author_name"></p>
                                 </div>
-                                <div class="flex items-center">
+                                <div class="flex items-center post_interact">
                                     <i class="cursor-pointer fa-regular fa-bookmark mr-[8px] post_Reaction"></i>
                                     <i class="cursor-pointer fa-solid fa-bookmark mr-[8px] text-[#d54253] post_Reaction__active"
                                         style="display: none;"></i>
@@ -374,21 +559,18 @@
                                 </div>
                             </div>
                             <div class="mt-[8px] mb-[16px] flex itemPostContent">
-                                <div class="mr-[24px]">
-                                    <p class="text-[20px] font-[700] cursor-pointer">Áo Polo F8 Đã
-                                        Về! Trên Tay Áo Polo F8 Của F8</p>
-                                    <p class="mt-[4px] leading-[1.6] text-[15px] font-light">Là thành viên F8, chúng ta
-                                        luôn mong muốn được "nhận ra" ở mọi nơi. Hãy rinh cho mình áo Polo F8 ngay hôm
-                                        nay nhé!</p>
+                                <div class="mr-[24px] w-[60%]">
+                                    <p class="text-[20px] font-[700] cursor-pointer post_inf_title"></p>
+                                    <p class="mt-[4px] leading-[1.6] text-[15px] font-light post_inf_des"></p>
                                 </div>
                                 <img class="itemPostContent_img object-cover w-[40%] rounded-[16px] cursor-pointer"
-                                    src="https://files.fullstack.edu.vn/f8-prod/blog_posts/3590/628db70cc11eb.jpg"
+                                    src=""
                                     alt="">
                             </div>
                             <div class="flex items-center">
-                                <p class="opacity-[0.9]">12 ngày trước</p>
-                                <i class="opacity-[0.9] fa-solid fa-circle text-[4px] mx-[8px]"></i>
-                                <p class="opacity-[0.9]">5 phút đọc</p>
+                                <p class="opacity-[0.9] post_inf_postTime"></p>
+                                <i class="opacity-[0.9] fa-solid fa-circle text-[4px] mx-[8px] post_seperateDot"></i>
+                                <p class="opacity-[0.9] post_inf_readTime"></p>
                             </div>
                         </li>
                     </ul>
@@ -396,16 +578,16 @@
                         <p class="mb-[12px] opacity-[0.9] m-[6px]">CÁC CHỦ ĐỀ ĐƯỢC ĐỀ XUẤT</p>
                         <div class="flex flex-wrap text-[#333]">
                             <div
-                                class="bg-[#fafafa] border-[1px] border-solid border-[#2b2c2d] hover:bg-[#f6f6f6] cursor-pointer px-[10px] py-[8px] rounded-[18px] m-[6px] post_suggested_topic">
+                                class="bg-[#eff6ff] border-[1px] border-solid border-[#2b2c2d] hover:bg-[#e0f2fe] cursor-pointer px-[10px] py-[8px] rounded-[100px] m-[6px] post_suggested_topic">
                                 Cân bằng phương trình hóa học</div>
                             <div
-                                class="bg-[#fafafa] border-[1px] border-solid border-[#2b2c2d] hover:bg-[#f6f6f6] cursor-pointer px-[10px] py-[8px] rounded-[18px] m-[6px] post_suggested_topic">
+                                class="bg-[#eff6ff] border-[1px] border-solid border-[#2b2c2d] hover:bg-[#e0f2fe] cursor-pointer px-[10px] py-[8px] rounded-[100px] m-[6px] post_suggested_topic">
                                 Giải phương trình</div>
                             <div
-                                class="bg-[#fafafa] border-[1px] border-solid border-[#2b2c2d] hover:bg-[#f6f6f6] cursor-pointer px-[10px] py-[8px] rounded-[18px] m-[6px] post_suggested_topic">
+                                class="bg-[#eff6ff] border-[1px] border-solid border-[#2b2c2d] hover:bg-[#e0f2fe] cursor-pointer px-[10px] py-[8px] rounded-[100px] m-[6px] post_suggested_topic">
                                 Phương trình</div>
                             <div
-                                class="bg-[#fafafa] border-[1px] border-solid border-[#2b2c2d] hover:bg-[#f6f6f6] cursor-pointer px-[10px] py-[8px] rounded-[18px] m-[6px] post_suggested_topic">
+                                class="bg-[#eff6ff] border-[1px] border-solid border-[#2b2c2d] hover:bg-[#e0f2fe] cursor-pointer px-[10px] py-[8px] rounded-[100px] m-[6px] post_suggested_topic">
                                 Other</div>
                         </div>
                     </div>
@@ -415,7 +597,7 @@
     </div>
     <footer class="px-[80px] py-[60px] bg-[#181821] w-full text-[#a9b3bb] footer">
         <ul class="mb-[64px] flex">
-            <li class="">
+            <li class="w-[30%]">
                 <div class="flex items-center mb-[16px]">
                     <img src="../assets/chemiscare_logo-1.png" alt="" class="w-[44px] h-[44px] mr-[8px] rounded-[8px]">
                     <p class="font-bold text-[24px] logo_text text-[#fff]">Chemiscare</p>
@@ -429,7 +611,7 @@
                         Email:
                         <span class="hover:opacity-[0.8] cursor-pointer">trinhvanson0807@gmail.com</span>
                     </p>
-                    <p class="whitespace-nowrap">
+                    <p class="">
                         Facebook:
                         <span>
                             <span class="hover:opacity-[0.8] cursor-pointer underline">Trịnh Văn Sơn</span>
@@ -437,7 +619,7 @@
                             <span class="hover:opacity-[0.8] cursor-pointer underline">Nguyễn Phúc Thanh</span>
                         </span>
                     </p>
-                    <p class="whitespace-nowrap">
+                    <p class="">
                         Github:
                         <span>
                             <span class="hover:opacity-[0.8] cursor-pointer underline">SownVP</span>
@@ -447,7 +629,7 @@
                     </p>
                 </div>
             </li>
-            <li class="mx-[32px]">
+            <li class="mx-[32px] w-[50%]">
                 <p class="font-semibold text-[20px] text-[#fff] mb-[8px]">VỀ CHEMISCARE</p>
                 <div>
                     <p>Chemiscare là một trang web về Hóa Học, ở đây bạn có thể trao đổi thông tin, giải đáp thắc mắc,
@@ -457,7 +639,7 @@
                         luyện môn Hóa</p>
                 </div>
             </li>
-            <li class="">
+            <li class="w-[20%]">
                 <p class="font-semibold text-[20px] text-[#fff] mb-[8px]">SOCIAL</p>
                 <div class="flex items-center text-[24px] mx-[-8px]">
                     <span
@@ -500,13 +682,9 @@
             </div>
             <p class="text-center mb-[16px] font-semibold">Bạn vẫn còn thắc mắc về Website của chúng tôi ?</p>
             <span
-                class="bg-[#38B6FF] hover:bg-[#6dc9ff] cursor-pointer text-[#fff] px-[16px] py-[8px] rounded-[6px] tutorial_start_btn">Xem
+                class="bg-[#38B6FF] hover:bg-[#6dc9ff] cursor-pointer text-[#fff] px-[16px] py-[8px] rounded-[6px] btn tutorial_start_btn">Xem
                 hướng dẫn</span>
         </div>
     </div>
     <script src="./main.js"></script>
-    <script>
-        $('.nav_item_wrapper').style.top = `${$('.nav_item.active').offsetTop}px`;
-        $('.tutorial_open_btn').style.transform = `translateX(${($('.tutorial_open_btn').clientWidth - $('.tutorial_open_btn').clientHeight) / 2}px)`;
-    </script>
 </body>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -48,6 +48,7 @@
             background-color: #38B6FF;
             border-radius: 4px;
         }
+
         .footer,
         .user_menu_userName,
         .board_title {
@@ -97,6 +98,10 @@
             box-shadow: 0px 0px 8px #38B6FF;
         }
 
+        .btn:hover {
+            background: #6dc9ff !important;
+        }
+
         .footer_social {
             box-shadow: 0px 0px 8px #fff;
         }
@@ -139,56 +144,71 @@
                 opacity: 1;
             }
         }
-        .theme_mode_dark{
+
+        .theme_mode_dark {
             transition: all ease-in 0.1s;
         }
-        body.darkmode{
+
+        body.darkmode {
             background: #13161B;
             color: #fff;
         }
-        .darkmode .header{
+
+        .darkmode .header {
             background: #1f232b;
             box-shadow: 0px 0px 0px 0px #000;
             border-width: 0px;
         }
+
         .darkmode .board_col_header,
-        .darkmode .slider_background{
+        .darkmode .slider_background {
             background: #353945;
         }
-        .darkmode .user_menu{
+
+        .darkmode .user_menu {
             background: #3D4048;
             box-shadow: 0px 0px 0px 0px #000;
         }
-        .darkmode .user_menu_item:hover{
+
+        .darkmode .user_menu_item:hover {
             color: #ddd;
         }
-        .darkmode .board{
+
+        .darkmode .board {
             border-color: #51535a;
             box-shadow: 0px 0px 0px 0px #000;
         }
-        .darkmode .search_bar_wrapper{
+
+        .darkmode .search_bar_wrapper {
             border-color: #ccc;
         }
-        .darkmode .search_icon{
+
+        .darkmode .search_icon {
             color: #ccc;
         }
-        .darkmode .nav_item{
+
+        .darkmode .nav_item {
             color: #ccc;
         }
-        .darkmode .nav_item:hover{
+
+        .darkmode .nav_item:hover {
             color: #1a1a1a;
         }
-        .darkmode .search_bar::placeholder{
+
+        .darkmode .search_bar::placeholder {
             color: #ccc
         }
-        .darkmode .comment_detail{
+
+        .darkmode .comment_detail {
             background: #353945;
         }
-        .darkmode .comment_Content{
+
+        .darkmode .comment_Content {
             background: #1f232b;
         }
-        .partRight{
 
+        .comment_sentBtn {
+            transition: all ease-in 0.05s;
         }
     </style>
 </head>
@@ -203,20 +223,24 @@
         <div
             class="w-[400px] flex items-center border-[#e8e8e8] border-[2px] border-solid rounded-[20px] pl-[8px] pr-[16px] overflow-hidden search_bar_wrapper">
             <i class="fa-solid fa-magnifying-glass search_icon mr-[8px] text-[#777]"></i>
-            <input class="grow h-[34px] outline-none search_bar bg-[transparent]" type="text" placeholder="Tìm kiếm trên trang web...">
+            <input class="grow h-[34px] outline-none search_bar bg-[transparent]" type="text"
+                placeholder="Tìm kiếm trên trang web...">
         </div>
         <div>
             <div class="flex items-center">
-                <div class="border-solid border-[2px] h-[20px] w-[20px] rounded-[50%] change_theme_mode_btn cursor-pointer flex items-center justify-center">
-                        <i class="fa-solid fa-moon theme_mode_dark"></i>
+                <div
+                    class="border-solid border-[2px] h-[20px] w-[20px] rounded-[50%] change_theme_mode_btn cursor-pointer flex items-center justify-center">
+                    <i class="fa-solid fa-moon theme_mode_dark"></i>
                 </div>
-                <p class="font-semibold mx-[16px] header_myRank_btn text-[#1a1a1a] cursor-pointer bg-[#E0F2FE] px-[16px] py-[6px] rounded-[20px]">
+                <p
+                    class="font-semibold mx-[16px] header_myRank_btn text-[#1a1a1a] cursor-pointer bg-[#E0F2FE] px-[16px] py-[6px] rounded-[20px]">
                     Xếp hạng của tôi</p>
                 <div class="relative user_menu_wrapper">
                     <img class="w-[44px] h-[44px] cursor-pointer rounded-[50%]"
                         src="https://i.pinimg.com/564x/34/87/50/3487501df643bc49fe5e8cbd6fc0e52b.jpg" alt="">
                     <ul class="hidden absolute user_menu rounded-[16px] py-[8px] px-[16px] right-0 w-[240px] bg-[#fff]">
-                        <li class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[8px]">
+                        <li
+                            class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[8px]">
                             <img class="mr-[8px] w-[44px] h-[44px] cursor-pointer rounded-[50%]"
                                 src="https://i.pinimg.com/564x/34/87/50/3487501df643bc49fe5e8cbd6fc0e52b.jpg" alt="">
                             <div>
@@ -224,16 +248,20 @@
                                 <p class="text-[14px] font-light user_menu_userSchool"></p>
                             </div>
                         </li>
-                        <li class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px] border_top">
+                        <li
+                            class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px] border_top">
                             <p class="text-[16px]">Trang cá nhân</p>
                         </li>
-                        <li class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px] border_top">
+                        <li
+                            class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px] border_top">
                             <p class="text-[16px]">Xếp hạng</p>
                         </li>
-                        <li class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px]">
+                        <li
+                            class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px]">
                             <p class="text-[16px]">Viết blog</p>
                         </li>
-                        <li class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px] border_top">
+                        <li
+                            class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px] border_top">
                             <p class="text-[16px]">Đăng xuất</p>
                         </li>
                     </ul>
@@ -276,17 +304,18 @@
                 <span class="nav_item_wrapper w-[68px] h-[68px] bg-[#e8ebed] rounded-[16px] absolute"></span>
             </ul>
         </div>
-        <div class=" w-[90%] pb-[64px]">
-            <div class="w-[20%] inline-block partRight">
-                <div class="mx-[32px]">
+        <div class=" w-[90%] pb-[64px] flex">
+            <div class="partRight w-[20%]">
+                <div class="mx-[32px] sticky top-[128px] ">
                     <p class="text-[18px] font-medium text-center">Trịnh Văn Sơn</p>
                     <hr class="h-[1px] bg-[#2a2c34] mt-[10px] mb-[24px]">
                     <div class="flex justify-around">
                         <span class="flex flex-col items-center cursor-pointer">
                             <i class="text-[20px] mb-[4px] fa-regular fa-heart post_Reaction"></i>
-                            <i class="text-[20px] mb-[4px] fa-solid fa-heart post_Reaction__active text-[#d54253]" style="display: none;"></i>
+                            <i class="text-[20px] mb-[4px] fa-solid fa-heart post_Reaction__active text-[#d54253]"
+                                style="display: none;"></i>
                             10
-                        </span> 
+                        </span>
                         <span class="flex flex-col items-center cursor-pointer">
                             <i class="text-[20px] mb-[4px] fa-regular fa-comment comment_Icon__open"></i>
                             20
@@ -294,7 +323,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-[60%] partLeft inline-block">
+            <div class="w-[60%] partLeft">
                 <div>
                     <p class="font-bold text-[40px] mt-[-10px] postTitle">Cách sử dụng Routing trong ReactJS</p>
                     <div class="my-[20px] flex items-center justify-between">
@@ -315,22 +344,30 @@
                         </div>
                         <div class="flex items-center">
                             <span class="flex flex-col items-center cursor-pointer mr-[24px]">
-                                <i class="text-[20px] mb-[4px] fa-regular fa-comment comment_Icon__open"></i>
-                                20
+                                <i class="text-[20px] mb-[4px] fa-regular fa-heart post_Reaction"></i>
+                                <i class="text-[20px] mb-[4px] fa-solid fa-heart post_Reaction__active text-[#000]"
+                                    style="display: none;"></i>
+                                10
                             </span>
                             <span class="flex flex-col items-center cursor-pointer">
-                                <i class="text-[20px] mb-[4px] fa-regular fa-heart post_Reaction"></i>
-                                <i class="text-[20px] mb-[4px] fa-solid fa-heart post_Reaction__active text-[#000]" style="display: none;"></i>
-                                10
+                                <i class="text-[20px] mb-[4px] fa-regular fa-comment comment_Icon__open"></i>
+                                20
                             </span>
                         </div>
                     </div>
                 </div>
+                <div>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia ad ab assumenda eaque illo eum
+                    provident saepe laudantium et cum magnam, aspernatur perferendis fugit sed voluptates id qui est
+                    culpa.
+                </div>
             </div>
             <div class="fixed w-[100%] z-50 top-0 bottom-0 right-0 bg-[rgba(0,0,0,0.2)] comment_Wrapper hidden">
-                <div class="comment_Content w-[50%] bg-[#fafafa] absolute right-0 top-0 bottom-0 pt-[50px] pb-[60px] px-[40px] overflow-y-auto">
+                <div
+                    class="comment_Content w-[50%] bg-[#fafafa] absolute right-0 top-0 bottom-0 pt-[50px] pb-[60px] px-[40px] overflow-y-auto">
                     <div class="w-full text-right">
-                        <i class="comment_Icon__close fa-solid fa-xmark text-[24px] cursor-pointer py-[10px] pl-[10px]"></i>
+                        <i
+                            class="comment_Icon__close fa-solid fa-xmark text-[24px] cursor-pointer py-[10px] pl-[10px]"></i>
                     </div>
                     <div>
                         <p class="text-[20px] font-medium mb-[40px]">3 bình luận</p>
@@ -344,25 +381,28 @@
                                     </div>
                                     <div class="grow">
                                         <input
-                                            class="w-full font-light bg-[transparent] py-[8px] outline-none border-solid border-[#2a2c34] border-b-[1.4px]"
+                                            class="w-full font-light bg-[transparent] py-[8px] outline-none border-solid border-[#2a2c34] border-b-[1.4px] comment_writeInput"
                                             type="text" placeholder="Viết bình luận của bạn...">
                                     </div>
                                 </div>
                                 <div class="flex justify-end">
                                     <span class="px-[20px] py-[8px] font-medium cursor-pointer">HỦY</span>
                                     <span
-                                        class="px-[20px] py-[8px] font-medium bg-[#ccc] cursor-pointer rounded-[20px]">BÌNH
+                                        class="bg-[#ccc] font-medium cursor-pointer text-[#fff] px-[16px] py-[8px] rounded-full comment_sentBtn">BÌNH
                                         LUẬN</span>
+
                                 </div>
                             </div>
                             <ul class="">
                                 <li class="flex my-[20px]">
                                     <div class="mr-[8px]">
                                         <img class="w-[36px] h-[36px] object-cover rounded-[50%]"
-                                        src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                                            src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                            alt="">
                                     </div>
                                     <div style="max-width: calc(100% - 44px)">
-                                        <div class="bg-[#E0F2FE] px-[12px] py-[10px] rounded-[16px] mb-[8px] comment_detail">
+                                        <div
+                                            class="bg-[#E0F2FE] px-[12px] py-[10px] rounded-[16px] mb-[8px] comment_detail">
                                             <p class="font-medium mb-[4px]">Nguyễn Phúc Thanh</p>
                                             <p class="font-light break-words">Hay lắm bạn bạn bạn bạn bạn bạn bạnHay lắm
                                                 bạn bạn bạn bạn bạn bạn bạnHay lắm bạn bạn bạn bạn bạn bạn bạn!!!</p>
@@ -390,7 +430,9 @@
                                             </div>
                                             <div class="justify-end flex">
                                                 <span class="px-[20px] py-[8px] font-medium cursor-pointer">HỦY</span>
-                                                <span class="px-[20px] py-[8px] font-medium bg-[#ccc] cursor-pointer rounded-[20px]">TRẢ LỜI</span>
+                                                <span
+                                                    class="px-[20px] py-[8px] font-medium bg-[#ccc] cursor-pointer rounded-[20px]">TRẢ
+                                                    LỜI</span>
                                             </div>
                                         </div>
                                         <div>
@@ -406,16 +448,25 @@
                                                             alt="">
                                                     </div>
                                                     <div style="max-width: calc(100% - 44px)">
-                                                        <div class="bg-[#E0F2FE] px-[12px] py-[10px] rounded-[16px] mb-[8px] comment_detail">
+                                                        <div
+                                                            class="bg-[#E0F2FE] px-[12px] py-[10px] rounded-[16px] mb-[8px] comment_detail">
                                                             <p class="font-medium mb-[4px]">Nguyễn Phúc Thanh</p>
-                                                            <p class="font-light break-words">Hay lắm bạn bạn bạn bạn bạn bạn bạnHay lắm
-                                                                bạn bạn bạn bạn bạn bạn bạnHay lắm bạn bạn bạn bạn bạn bạn bạn!!!</p>
+                                                            <p class="font-light break-words">Hay lắm bạn bạn bạn bạn
+                                                                bạn bạn bạnHay lắm
+                                                                bạn bạn bạn bạn bạn bạn bạnHay lắm bạn bạn bạn bạn bạn
+                                                                bạn bạn!!!</p>
                                                         </div>
-                                                        <div class="flex items-center text-[14px] justify-between mb-[8px]">
+                                                        <div
+                                                            class="flex items-center text-[14px] justify-between mb-[8px]">
                                                             <div class="flex items-center">
-                                                                <p class="cursor-pointer hover:text-[#000] opacity-[0.9]">Thích</p>
-                                                                <i class="opacity-[0.9] fa-solid fa-circle text-[4px] mx-[8px]"></i>
-                                                                <p class="cursor-pointer hover:text-[#000] opacity-[0.9]">Trả lời</p>
+                                                                <p
+                                                                    class="cursor-pointer hover:text-[#000] opacity-[0.9]">
+                                                                    Thích</p>
+                                                                <i
+                                                                    class="opacity-[0.9] fa-solid fa-circle text-[4px] mx-[8px]"></i>
+                                                                <p
+                                                                    class="cursor-pointer hover:text-[#000] opacity-[0.9]">
+                                                                    Trả lời</p>
                                                             </div>
                                                             <p class="opacity-[0.9] font-light">15 phút trước</p>
                                                         </div>
@@ -429,13 +480,16 @@
                                                                 <div class="grow">
                                                                     <input
                                                                         class="w-full font-light bg-[transparent] py-[8px] outline-none border-solid border-[#2a2c34] border-b-[1.4px]"
-                                                                        type="text" placeholder="Viết bình luận của bạn...">
+                                                                        type="text"
+                                                                        placeholder="Viết bình luận của bạn...">
                                                                 </div>
                                                             </div>
                                                             <div class="flex justify-end">
-                                                                <span class="px-[20px] py-[8px] font-medium cursor-pointer">HỦY</span>
                                                                 <span
-                                                                    class="px-[20px] py-[8px] font-medium bg-[#ccc] cursor-pointer rounded-[20px]">TRẢ LỜI</span>
+                                                                    class="px-[20px] py-[8px] font-medium cursor-pointer">HỦY</span>
+                                                                <span
+                                                                    class="px-[20px] py-[8px] font-medium bg-[#ccc] cursor-pointer rounded-[20px]">TRẢ
+                                                                    LỜI</span>
                                                             </div>
                                                         </div>
                                                         <div>
@@ -557,31 +611,825 @@
         </div>
     </div>
     <script src="./main.js"></script>
-    <script>
-        $('.nav_item_wrapper').style.top = `${$('.nav_item.active').offsetTop}px`;
-        $('.tutorial_open_btn').style.transform = `translateX(${($('.tutorial_open_btn').clientWidth - $('.tutorial_open_btn').clientHeight) / 2}px)`;
+</body> -->
+<!DOCTYPE html>
+<html lang="en">
 
-        $$('.comment_Icon__open').forEach(function(elm){
-            elm.addEventListener('click', function(){
-                $('.comment_Wrapper').style.display = 'block'
-            })
-        })
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hurricane&family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Koulen&family=Lobster&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Oswald:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&family=Sofia&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../tailwind/build/tailwind.css">
+    <title>Chemiscare</title>
+    <style>
+        body {
+            font-family: "Nunito";
+            color: #1a1a1a;
+        }
+        .loading .itemPostContent_img,
+        .loading .post_inf_readTime,
+        .loading .post_inf_postTime,
+        .loading .post_inf_des,
+        .loading .post_inf_title,
+        .loading .post_author_name,
+        .loading .post_author_avt{
+            background: #b8e3ff;
+        }
+        .darkmode.loading .itemPostContent_img,
+        .darkmode.loading .post_inf_readTime,
+        .darkmode.loading .post_inf_postTime,
+        .darkmode.loading .post_inf_des,
+        .darkmode.loading .post_inf_title,
+        .darkmode.loading .post_author_name,
+        .darkmode.loading .post_author_avt{
+            background: #475569;
+        }
+        .loading .post_author_avt{
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+        }
+        .loading .post_author_name{
+            width: 38%;
+            height: 20px;
+            border-radius: 100px;
+        }
+        .loading .post_inf_title{
+            height: 30px;
+            width: 80%;
+            border-radius: 100px;
+        }
+        .loading .post_inf_des{
+            height: 60px;
+            width: 100%;
+            border-radius: 8px;
+        }
+        .loading .post_inf_postTime{
+            height: 20px;
+            width: 22%;
+            border-radius: 100px;
+        }
+        .loading .post_inf_readTime{
+            height: 20px;
+            width: 22%;
+            border-radius: 100px;
+        }
+        .loading .post_interact,
+        .loading .post_inf_seperateDot{
+            color: #475569;
+        }
+        .header {
+            box-shadow: 0 2px 4px 0 rgb(219, 219, 219);
+        }
 
-        $('.comment_Icon__close').addEventListener('click', function(){
-            $('.comment_Wrapper').style.display = 'none'
-        })
+        .logo_text {
+            font-family: "Lobster";
+            font-weight: 900;
+        }
 
-        $$('.post_Reaction').forEach(function(post_Reaction, index){
-            post_Reaction.addEventListener('click', function(){
-                $$('.post_Reaction__active')[index].style.display = 'inline';
-                post_Reaction.style.display = 'none'
-            })
-        })
-        $$('.post_Reaction__active').forEach(function(post_Reaction__active, index){
-            post_Reaction__active.addEventListener('click', function(){
-                $$('.post_Reaction')[index].style.display = 'inline';
-                post_Reaction__active.style.display = 'none'
-            })
-        })
-    </script>
+        ::selection {
+            background: #1473e6;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            background-color: #E0F2FE;
+            overflow: overlay;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #38B6FF;
+            border-radius: 4px;
+        }
+
+        .footer,
+        .user_menu_userName,
+        .board_title {
+            font-family: "Roboto";
+        }
+
+        .search_bar::placeholder {
+            color: #777777;
+            font-weight: 300;
+        }
+
+        .nav_item.active {
+            color: #000 !important;
+        }
+
+        .nav_item.active:hover {
+            background: transparent;
+        }
+
+        .nav_item_wrapper {
+            transition: all ease-in 0.1s;
+        }
+
+        .board {
+            box-shadow: 1px 2px 4px rgb(219, 219, 219);
+        }
+
+        .user_menu {
+            top: calc(100% + 8px);
+            box-shadow: 2px 4px 10px rgb(146, 146, 146);
+        }
+
+        .tutorial_start_wrapper {
+            right: calc(100% + 32px);
+        }
+
+        .tutorial_start_wrapper {
+            box-shadow: 2px 4px 10px rgb(146, 146, 146);
+        }
+
+        .border_top {
+            border-top: 1px solid rgba(232, 232, 232, 0.2);
+        }
+
+        .btn {
+            box-shadow: 0px 0px 8px #38B6FF;
+        }
+
+        .footer_social {
+            box-shadow: 0px 0px 8px #fff;
+        }
+
+        .tutorial_open_btn {
+            animation: surfing ease-in 0.2s;
+        }
+
+        .tutorial_start_wrapper {
+            animation: surfing ease-in 0.2s;
+        }
+
+        .tutorial_start_btn {
+            animation: appear ease-in 0.3s;
+        }
+
+        .nav_onTablet {
+            background: rgba(0, 0, 0, 0.4);
+            
+        }
+        .nav_onTablet ul{
+            animation: surfing-reverse ease-in 0.05s;
+        }
+        @keyframes surfing {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+        @keyframes surfing-reverse {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+        @keyframes appear {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateY(-4px);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .theme_mode_dark {
+            transition: all ease-in 0.1s;
+        }
+
+        body.darkmode {
+            background: #13161B;
+            color: #fff;
+        }
+
+        .darkmode .header {
+            background: #1f232b;
+            box-shadow: 0px 0px 0px 0px #000;
+            border-width: 0px;
+        }
+
+        .darkmode .board_col_header,
+        .darkmode .slider_background {
+            background: #353945;
+        }
+
+        .darkmode .user_menu {
+            background: #3D4048;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        .darkmode .user_menu_item:hover {
+            color: #ddd;
+        }
+
+        .darkmode .board {
+            border-color: #51535a;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        .darkmode .search_bar_wrapper {
+            border-color: #ccc;
+        }
+
+        .darkmode .search_icon {
+            color: #ccc;
+        }
+
+        .darkmode .nav_item {
+            color: #ccc;
+        }
+
+        .darkmode .nav_item:hover {
+            color: #1a1a1a;
+        }
+
+        .darkmode .search_bar::placeholder {
+            color: #ccc
+        }
+        .darkmode .nav_onTablet ul{
+            background: #3D4048;
+        }
+        .darkmode .post{
+            background: #1f232b;
+        }
+        .darkmode .post_suggested_topic{
+            background: #E0F2FE;
+        }
+        .darkmode .post_suggested_topic:hover{
+            background: #e9f6ff;
+        }
+        .darkmode .comment_detail {
+            background: #353945;
+        }
+
+        .darkmode .comment_Content {
+            background: #1f232b;
+        }
+
+        .comment_sentBtn {
+            transition: all ease-in 0.05s;
+        }
+        @media screen and (max-width: 900px) {
+            .partRight,
+            .suggestedTopic,
+            .header_signUp_btn,
+            .logo_text_onHeader,
+            .viewMyRank_btn {
+                display: none;
+            }
+            .nav_open_btn{
+                display: inline;
+            }
+            .change_theme_mode_btn {
+                margin-right: 16px;
+            }
+
+            .body {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 0 8px;
+            }
+
+            .body>div {
+                margin: 0;
+            }
+
+            .footer>ul {
+                display: block;
+            }
+
+            .footer>ul li:nth-child(2) {
+                margin: 32px 0;
+            }
+
+            .footer>ul li {
+                width: 100%;
+            }
+
+            .footer {
+                padding: 32px;
+            }
+            .listPost{
+                width: 100%;
+            }
+            .partLeft{
+                width: 100%;
+            }
+            .comment_Content{
+                width: 90%;
+                padding: 16px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .suggestedTopic,
+            .slider_modal,
+            .search_bar_wrapper,
+            .logo_text_onHeader,
+            .viewMyRank_btn {
+                display: none;
+            }
+
+            .change_theme_mode_btn {
+                margin-right: 16px;
+            }
+
+            .body {
+                width: 100%;
+            }
+
+            .footer>ul {
+                display: block;
+                margin-bottom: 64px;
+            }
+
+            .footer>ul li:nth-child(2) {
+                margin: 32px 0;
+            }
+
+            .slider_text {
+                margin: 0;
+            }
+
+            .slider_text p:nth-child(1) {
+                font-size: 40px;
+            }
+
+            .footer {
+                padding: 16px;
+            }
+
+            .slider_background {
+                height: 100%;
+            }
+            .listPost{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="loading">
+    <header
+        class="header flex fixed top-0 left-0 right-0 py-[8px] border-solid border-[1px] border-[#e8ebed] items-center px-[20px] justify-between bg-[#fff] z-[100] box-">
+        <div class="flex items-center">
+            <img src="../assets/chemiscare_logo-1.png" alt="" class="logo_img w-[44px] h-[44px] mr-[8px] rounded-[8px]">
+            <p class="font-bold text-[24px] logo_text logo_text_onHeader">Chemiscare</p>
+            <i class="fa-solid fa-bars text-[24px] hidden nav_open_btn"></i>
+        </div>
+        <div
+            class="w-[400px] flex items-center border-[#e8e8e8] border-[2px] border-solid rounded-[20px] pl-[8px] pr-[16px] overflow-hidden search_bar_wrapper">
+            <i class="fa-solid fa-magnifying-glass search_icon mr-[8px] text-[#777]"></i>
+            <input class="grow h-[34px] outline-none search_bar bg-[transparent]" type="text"
+                placeholder="Tìm kiếm trên trang web...">
+        </div>
+        <div>
+            <div class="flex items-center">
+                <div
+                    class="border-solid border-[2px] h-[20px] w-[20px] rounded-[50%] change_theme_mode_btn cursor-pointer flex items-center justify-center">
+                    <i class="fa-solid fa-moon theme_mode_dark"></i>
+                </div>
+                <p class="font-semibold mx-[16px] header_signUp_btn">Đăng kí</p>
+                <p
+                    class="font-semibold text-[#1a1a1a] cursor-pointer bg-[#E0F2FE] px-[16px] py-[6px] rounded-[20px]">
+                    Đăng nhập</p>
+                <p
+                    class="font-semibold mx-[16px] text-[#1a1a1a] cursor-pointer bg-[#E0F2FE] px-[16px] py-[6px] rounded-[20px] viewMyRank_btn hidden">
+                    Xếp hạng của tôi</p>
+                <div class="relative user_menu_wrapper hidden">
+                    <img class="w-[44px] h-[44px] cursor-pointer rounded-[50%]"
+                        src="https://i.pinimg.com/564x/34/87/50/3487501df643bc49fe5e8cbd6fc0e52b.jpg" alt="">
+                    <ul class="hidden absolute user_menu rounded-[16px] py-[8px] px-[16px] right-0 w-[240px] bg-[#fff]">
+                        <li
+                            class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[8px]">
+                            <img class="mr-[8px] w-[44px] h-[44px] cursor-pointer rounded-[50%]"
+                                src="https://i.pinimg.com/564x/34/87/50/3487501df643bc49fe5e8cbd6fc0e52b.jpg" alt="">
+                            <div>
+                                <p class="font-bold text-[16px] user_menu_userName"></p>
+                                <p class="text-[14px] font-light user_menu_userSchool"></p>
+                            </div>
+                        </li>
+                        <li
+                            class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px] border_top">
+                            <p class="text-[16px]">Trang cá nhân</p>
+                        </li>
+                        <li
+                            class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px] border_top">
+                            <p class="text-[16px]">Xếp hạng</p>
+                        </li>
+                        <li
+                            class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px]">
+                            <p class="text-[16px]">Viết blog</p>
+                        </li>
+                        <li
+                            class="flex cursor-pointer user_menu_item hover:text-[#000] items-center px-[20px] py-[12px] border_top">
+                            <p class="text-[16px]">Đăng xuất</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="flex mt-[100px] w-[90%] mb-[8px] body">
+        <nav class="nav_main">
+            <ul class="p-[16px] flex flex-col items-center sticky left-0 top-[100px]">
+                <li
+                    class="w-[44px] h-[44px] flex items-center justify-center mb-[8px] bg-[#1473e6] rounded-[50%] border-[#1473e6] border-solid border-[1px] text-[#fff] cursor-pointer">
+                    <i class="fa-solid fa-plus"></i>
+                </li>
+                <li
+                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item active">
+                    <i class="fa-solid fa-house text-[18px] mb-[4px]"></i>
+                    <p class="text-[12px] nav_title font-bold">Home</p>
+                </li>
+                <li
+                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
+                    <i class="fa-solid fa-calendar text-[18px] mb-[4px]"></i>
+                    <p class="text-[12px] nav_title font-bold">Lịch</p>
+                </li>
+                <li
+                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
+                    <i class="fa-solid fa-scale-balanced text-[18px] mb-[4px]"></i>
+                    <p class="text-[12px] nav_title font-bold">Thể lệ</p>
+                </li>
+                <li
+                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
+                    <i class="fa-solid fa-ranking-star text-[18px] mb-[4px]"></i>
+                    <p class="text-[12px] nav_title font-bold">Hạng</p>
+                </li>
+                <li
+                    class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
+                    <i class="fa-solid fa-circle-question text-[18px] mb-[4px]"></i>
+                    <p class="text-[12px] nav_title font-bold">Hỏi đáp</p>
+                </li>
+                <span class="nav_item_wrapper w-[68px] h-[68px] bg-[#E0F2FE] rounded-[16px] absolute"></span>
+            </ul>
+        </nav>
+        <nav class="fixed top-0 bottom-0 left-0 right-0 z-[100] nav_onTablet hidden">
+            <ul class="w-[70%] bg-[#E0F2FE] h-full p-[32px]">
+                <li>
+                    <i class="nav_close_btn fa-solid fa-xmark text-[24px] cursor-pointer py-[10px] pl-[10px]"></i>
+                </li>
+                <li class="flex active my-[32px]">
+                    <i class="fa-solid fa-house text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Home</p>
+                </li>
+                <li class="flex my-[32px]">
+                    <i class="fa-solid fa-calendar text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Lịch</p>
+                </li>
+                <li class="flex my-[32px]">
+                    <i class="fa-solid fa-scale-balanced text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Thể lệ</p>
+                </li>
+                <li class="flex my-[32px]">
+                    <i class="fa-solid fa-ranking-star text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Hạng</p>
+                </li>
+                <li class="flex text-[40px] my-[32px]">
+                    <i class="fa-solid fa-circle-question text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Hỏi đáp</p>
+                </li>
+                <li class="flex text-[40px] my-[32px]">
+                    <i class="fa-solid fa-circle-question text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Viết bài</p>
+                </li>
+            </ul>
+        </nav>
+        <div class="ml-[40px] w-full pb-[64px]">
+            <div class="flex">
+                <div class="partRight w-[20%]">
+                    <div class="mx-[32px] sticky top-[128px] ">
+                        <p class="text-[18px] font-medium text-center">Trịnh Văn Sơn</p>
+                        <hr class="h-[1px] bg-[#2a2c34] mt-[10px] mb-[24px]">
+                        <div class="flex justify-around">
+                            <span class="flex flex-col items-center cursor-pointer">
+                                <i class="text-[20px] mb-[4px] fa-regular fa-heart post_Reaction"></i>
+                                <i class="text-[20px] mb-[4px] fa-solid fa-heart post_Reaction__active text-[#d54253]"
+                                    style="display: none;"></i>
+                                10
+                            </span>
+                            <span class="flex flex-col items-center cursor-pointer">
+                                <i class="text-[20px] mb-[4px] fa-regular fa-comment comment_Icon__open"></i>
+                                20
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-[60%] partLeft">
+                    <div>
+                        <p class="font-bold text-[40px] mt-[-10px] postTitle">Cách sử dụng Routing trong ReactJS</p>
+                        <div class="my-[20px] flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="mr-[4px]">
+                                    <img class="w-[50px] h-[50px] object-cover rounded-[50%]"
+                                        src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                        alt="">
+                                </div>
+                                <div>
+                                    <p>Trịnh Văn Sơn</p>
+                                    <div class="flex items-center">
+                                        <p class="opacity-[0.9] font-light text-[14px]">12 ngày trước</p>
+                                        <i class="opacity-[0.9] fa-solid fa-circle text-[4px] mx-[8px]"></i>
+                                        <p class="opacity-[0.9] font-light text-[14px]">5 phút đọc</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="flex flex-col items-center cursor-pointer mr-[24px]">
+                                    <i class="text-[20px] mb-[4px] fa-regular fa-heart post_Reaction"></i>
+                                    <i class="text-[20px] mb-[4px] fa-solid fa-heart post_Reaction__active text-[#000]"
+                                        style="display: none;"></i>
+                                    10
+                                </span>
+                                <span class="flex flex-col items-center cursor-pointer">
+                                    <i class="text-[20px] mb-[4px] fa-regular fa-comment comment_Icon__open"></i>
+                                    20
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia ad ab assumenda eaque illo eum
+                        provident saepe laudantium et cum magnam, aspernatur perferendis fugit sed voluptates id qui est
+                        culpa.
+                    </div>
+                </div>
+                <div class="fixed w-[100%] z-[100] top-0 bottom-0 right-0 bg-[rgba(0,0,0,0.2)] comment_Wrapper hidden">
+                    <div
+                        class="comment_Content w-[50%] bg-[#fafafa] absolute right-0 top-0 bottom-0 pt-[50px] pb-[60px] px-[40px] overflow-y-auto">
+                        <div class="w-full text-right">
+                            <i
+                                class="comment_Icon__close fa-solid fa-xmark text-[24px] cursor-pointer py-[10px] pl-[10px]"></i>
+                        </div>
+                        <div>
+                            <p class="text-[20px] font-medium mb-[40px]">3 bình luận</p>
+                            <div class="">
+                                <div class="mb-[10px]">
+                                    <div class="flex items-end mb-[8px]">
+                                        <div class="mr-[8px]">
+                                            <img class="w-[40px] h-[40px] object-cover rounded-[50%]"
+                                                src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                                alt="">
+                                        </div>
+                                        <div class="grow">
+                                            <input
+                                                class="w-full font-light bg-[transparent] py-[8px] outline-none border-solid border-[#2a2c34] border-b-[1.4px] comment_writeInput"
+                                                type="text" placeholder="Viết bình luận của bạn...">
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-end">
+                                        <span class="px-[20px] py-[8px] font-medium cursor-pointer">HỦY</span>
+                                        <span
+                                            class="bg-[#ccc] font-medium cursor-pointer text-[#fff] px-[16px] py-[8px] rounded-full comment_sentBtn">BÌNH
+                                            LUẬN</span>
+    
+                                    </div>
+                                </div>
+                                <ul class="">
+                                    <li class="flex my-[20px]">
+                                        <div class="mr-[8px]">
+                                            <img class="w-[36px] h-[36px] object-cover rounded-[50%]"
+                                                src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                                alt="">
+                                        </div>
+                                        <div style="max-width: calc(100% - 44px)">
+                                            <div
+                                                class="bg-[#E0F2FE] px-[12px] py-[10px] rounded-[16px] mb-[8px] comment_detail">
+                                                <p class="font-medium mb-[4px]">Nguyễn Phúc Thanh</p>
+                                                <p class="font-light break-words">Hay lắm bạn bạn bạn bạn bạn bạn bạnHay lắm
+                                                    bạn bạn bạn bạn bạn bạn bạnHay lắm bạn bạn bạn bạn bạn bạn bạn!!!</p>
+                                            </div>
+                                            <div class="flex items-center text-[14px] justify-between mb-[8px]">
+                                                <div class="flex items-center">
+                                                    <p class="cursor-pointer hover:text-[#000] opacity-[0.9]">Thích</p>
+                                                    <i class="opacity-[0.9] fa-solid fa-circle text-[4px] mx-[8px]"></i>
+                                                    <p class="cursor-pointer hover:text-[#000] opacity-[0.9]">Trả lời</p>
+                                                </div>
+                                                <p class="opacity-[0.9] font-light">15 phút trước</p>
+                                            </div>
+                                            <div class="my-[8px] hidden">
+                                                <div class="flex items-end mb-[8px]">
+                                                    <div class="mr-[8px]">
+                                                        <img class="w-[36px] h-[36px] object-cover rounded-[50%]"
+                                                            src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="grow">
+                                                        <input
+                                                            class="w-full font-light bg-[transparent] py-[8px] outline-none border-solid border-[#2a2c34] border-b-[1.4px]"
+                                                            type="text" placeholder="Viết bình luận của bạn...">
+                                                    </div>
+                                                </div>
+                                                <div class="justify-end flex">
+                                                    <span class="px-[20px] py-[8px] font-medium cursor-pointer">HỦY</span>
+                                                    <span
+                                                        class="px-[20px] py-[8px] font-medium bg-[#ccc] cursor-pointer rounded-[20px]">TRẢ
+                                                        LỜI</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="flex items-center cursor-pointer mb-8px">
+                                                    <p class="font-medium mr-[8px]">Xem 2 câu trả lời</p>
+                                                    <i class="fa-solid fa-angle-down"></i>
+                                                </div>
+                                                <ul class="">
+                                                    <li class="flex my-[20px]">
+                                                        <div class="mr-[8px]">
+                                                            <img class="w-[36px] h-[36px] object-cover rounded-[50%]"
+                                                                src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                                                alt="">
+                                                        </div>
+                                                        <div style="max-width: calc(100% - 44px)">
+                                                            <div
+                                                                class="bg-[#E0F2FE] px-[12px] py-[10px] rounded-[16px] mb-[8px] comment_detail">
+                                                                <p class="font-medium mb-[4px]">Nguyễn Phúc Thanh</p>
+                                                                <p class="font-light break-words">Hay lắm bạn bạn bạn bạn
+                                                                    bạn bạn bạnHay lắm
+                                                                    bạn bạn bạn bạn bạn bạn bạnHay lắm bạn bạn bạn bạn bạn
+                                                                    bạn bạn!!!</p>
+                                                            </div>
+                                                            <div
+                                                                class="flex items-center text-[14px] justify-between mb-[8px]">
+                                                                <div class="flex items-center">
+                                                                    <p
+                                                                        class="cursor-pointer hover:text-[#000] opacity-[0.9]">
+                                                                        Thích</p>
+                                                                    <i
+                                                                        class="opacity-[0.9] fa-solid fa-circle text-[4px] mx-[8px]"></i>
+                                                                    <p
+                                                                        class="cursor-pointer hover:text-[#000] opacity-[0.9]">
+                                                                        Trả lời</p>
+                                                                </div>
+                                                                <p class="opacity-[0.9] font-light">15 phút trước</p>
+                                                            </div>
+                                                            <div class="my-[12px] hidden">
+                                                                <div class="flex items-end mb-[8px]">
+                                                                    <div class="mr-[8px]">
+                                                                        <img class="w-[40px] h-[40px] object-cover rounded-[50%]"
+                                                                            src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="grow">
+                                                                        <input
+                                                                            class="w-full font-light bg-[transparent] py-[8px] outline-none border-solid border-[#2a2c34] border-b-[1.4px]"
+                                                                            type="text"
+                                                                            placeholder="Viết bình luận của bạn...">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex justify-end">
+                                                                    <span
+                                                                        class="px-[20px] py-[8px] font-medium cursor-pointer">HỦY</span>
+                                                                    <span
+                                                                        class="px-[20px] py-[8px] font-medium bg-[#ccc] cursor-pointer rounded-[20px]">TRẢ
+                                                                        LỜI</span>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="flex items-center cursor-pointer mb-8px">
+                                                                    <p class="font-medium mr-[8px]">Xem 2 câu trả lời</p>
+                                                                    <i class="fa-solid fa-angle-down"></i>
+                                                                </div>
+                                                            </div>
+                                                            <ul>
+                                                                <li>
+                                                                    <ul class="">
+                                                                        <li class="flex my-[20px]">
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="px-[80px] py-[60px] bg-[#181821] w-full text-[#a9b3bb] footer">
+        <ul class="mb-[64px] flex">
+            <li class="w-[30%]">
+                <div class="flex items-center mb-[16px]">
+                    <img src="../assets/chemiscare_logo-1.png" alt="" class="w-[44px] h-[44px] mr-[8px] rounded-[8px]">
+                    <p class="font-bold text-[24px] logo_text text-[#fff]">Chemiscare</p>
+                </div>
+                <div>
+                    <p>
+                        Điện thoại:
+                        <span class="hover:opacity-[0.8] cursor-pointer">0388128994</span>
+                    </p>
+                    <p>
+                        Email:
+                        <span class="hover:opacity-[0.8] cursor-pointer">trinhvanson0807@gmail.com</span>
+                    </p>
+                    <p class="">
+                        Facebook:
+                        <span>
+                            <span class="hover:opacity-[0.8] cursor-pointer underline">Trịnh Văn Sơn</span>
+                            &
+                            <span class="hover:opacity-[0.8] cursor-pointer underline">Nguyễn Phúc Thanh</span>
+                        </span>
+                    </p>
+                    <p class="">
+                        Github:
+                        <span>
+                            <span class="hover:opacity-[0.8] cursor-pointer underline">SownVP</span>
+                            &
+                            <span class="hover:opacity-[0.8] cursor-pointer underline">TCODEDAO</span>
+                        </span>
+                    </p>
+                </div>
+            </li>
+            <li class="mx-[32px] w-[50%]">
+                <p class="font-semibold text-[20px] text-[#fff] mb-[8px]">VỀ CHEMISCARE</p>
+                <div>
+                    <p>Chemiscare là một trang web về Hóa Học, ở đây bạn có thể trao đổi thông tin, giải đáp thắc mắc,
+                        học hỏi, giải trí và đặc biệt là rèn luyện được kinh nghiệm, kĩ năng làm bài thi và kiến thức về
+                        môn Hóa. Với giao diện thân thiện người dùng, bộ câu hỏi đa dạng cho các khối lớp 8, 9 và sau
+                        này còn có thể mở rộng thêm thì Chemiscare là một lựa chọn tuyệt vời để giáo viên, học sinh ôn
+                        luyện môn Hóa</p>
+                </div>
+            </li>
+            <li class="w-[20%]">
+                <p class="font-semibold text-[20px] text-[#fff] mb-[8px]">SOCIAL</p>
+                <div class="flex items-center text-[24px] mx-[-8px]">
+                    <span
+                        class="mx-[8px] cursor-pointer hover:bg-[#f1f1f1] footer_social text-[#3B5999] bg-[#fff] w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
+                        <i class="fa-brands fa-facebook"></i>
+                    </span>
+                    <span
+                        class="mx-[8px] cursor-pointer hover:bg-[#f1f1f1] footer_social text-[#333] bg-[#fff] w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
+                        <i class="fa-brands fa-github"></i>
+                    </span>
+                    <span
+                        class="mx-[8px] cursor-pointer hover:bg-[#f1f1f1] footer_social text-[#333] bg-[#fff] w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    <span
+                        class="mx-[8px] cursor-pointer hover:bg-[#f1f1f1] footer_social text-[#e1306c] bg-[#fff] w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
+                        <i class="fa-brands fa-instagram"></i>
+                    </span>
+                    <span
+                        class="mx-[8px] cursor-pointer hover:bg-[#f1f1f1] footer_social text-[#200120] bg-[#fff] w-[30px] h-[30px] rounded-[50%] flex items-center justify-center">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </span>
+                </div>
+            </li>
+        </ul>
+        <p>Copyright © 2022 - Trịnh Văn Sơn & Nguyễn Phúc Thanh - Học sinh lớp 9A trường THCS An Sinh</p>
+    </footer>
+    <div class="fixed top-[40%] right-0 z-10">
+        <div class="tutorial_open_btn cursor-pointer">
+            <div
+                class="bg-[#E0F2FE] text-[#1a1a1a] rotate-[-90deg] flex items-center px-[16px] py-[8px] rounded-tl-[8px] rounded-tr-[8px]">
+                <i class="fa-solid fa-circle-question mr-[8px]"></i>
+                <p class="font-semibold">Hướng dẫn</p>
+            </div>
+        </div>
+        <div
+            class="hidden absolute top-0 right-[100%] w-[240px] text-[#1a1a1a] bg-[#fff] items-center justify-center flex-col px-[32px] py-[32px] rounded-[16px] tutorial_start_wrapper">
+            <div class="absolute top-0 right-0 p-[16px] tutorial_start_close_btn cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <p class="text-center mb-[16px] font-semibold">Bạn vẫn còn thắc mắc về Website của chúng tôi ?</p>
+            <span
+                class="bg-[#38B6FF] hover:bg-[#6dc9ff] cursor-pointer text-[#fff] px-[16px] py-[8px] rounded-[6px] btn tutorial_start_btn">Xem
+                hướng dẫn</span>
+        </div>
+    </div>
+    <script src="./main.js"></script>
 </body>

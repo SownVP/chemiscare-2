@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +21,58 @@
             font-family: "Nunito";
             color: #1a1a1a;
         }
-
+        .loading .itemPostContent_img,
+        .loading .post_inf_readTime,
+        .loading .post_inf_postTime,
+        .loading .post_inf_des,
+        .loading .post_inf_title,
+        .loading .post_author_name,
+        .loading .post_author_avt{
+            background: #b8e3ff;
+        }
+        .darkmode.loading .itemPostContent_img,
+        .darkmode.loading .post_inf_readTime,
+        .darkmode.loading .post_inf_postTime,
+        .darkmode.loading .post_inf_des,
+        .darkmode.loading .post_inf_title,
+        .darkmode.loading .post_author_name,
+        .darkmode.loading .post_author_avt{
+            background: #475569;
+        }
+        .loading .post_author_avt{
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+        }
+        .loading .post_author_name{
+            width: 38%;
+            height: 20px;
+            border-radius: 100px;
+        }
+        .loading .post_inf_title{
+            height: 30px;
+            width: 80%;
+            border-radius: 100px;
+        }
+        .loading .post_inf_des{
+            height: 60px;
+            width: 100%;
+            border-radius: 8px;
+        }
+        .loading .post_inf_postTime{
+            height: 20px;
+            width: 22%;
+            border-radius: 100px;
+        }
+        .loading .post_inf_readTime{
+            height: 20px;
+            width: 22%;
+            border-radius: 100px;
+        }
+        .loading .post_interact,
+        .loading .post_inf_seperateDot{
+            color: #475569;
+        }
         .header {
             box-shadow: 0 2px 4px 0 rgb(219, 219, 219);
         }
@@ -211,7 +263,33 @@
         .darkmode .nav_onTablet ul{
             background: #3D4048;
         }
+        .darkmode .post{
+            background: #1f232b;
+        }
+        .darkmode .post_suggested_topic{
+            background: #E0F2FE;
+        }
+        .darkmode .post_suggested_topic:hover{
+            background: #e9f6ff;
+        }
+        .darkmode .comment_detail {
+            background: #353945;
+        }
+
+        .darkmode .comment_Content {
+            background: #1f232b;
+        }
+        .comment_sentBtn {
+            transition: all ease-in 0.05s;
+        }
+        .nav_onTablet li.active{
+            background: #e9f6ff;
+            color: #1a1a1a;
+        }
         @media screen and (max-width: 900px) {
+            .tutorial_wrapper,
+            .partRight,
+            .suggestedTopic,
             .header_signUp_btn,
             .logo_text_onHeader,
             .viewMyRank_btn {
@@ -249,10 +327,20 @@
             .footer {
                 padding: 32px;
             }
+            .listPost{
+                width: 100%;
+            }
+            .partLeft{
+                width: 100%;
+            }
+            .comment_Content{
+                width: 90%;
+                padding: 16px;
+            }
         }
 
         @media screen and (max-width: 500px) {
-
+            .suggestedTopic,
             .slider_modal,
             .search_bar_wrapper,
             .logo_text_onHeader,
@@ -292,11 +380,14 @@
             .slider_background {
                 height: 100%;
             }
+            .listPost{
+                width: 100%;
+            }
         }
     </style>
 </head>
 
-<body>
+<body class="loading">
     <header
         class="header flex fixed top-0 left-0 right-0 py-[8px] border-solid border-[1px] border-[#e8ebed] items-center px-[20px] justify-between bg-[#fff] z-[100] box-">
         <div class="flex items-center">
@@ -318,7 +409,7 @@
                 </div>
                 <p class="font-semibold mx-[16px] header_signUp_btn">Đăng kí</p>
                 <p
-                    class="font-semibold text-[#1a1a1a] cursor-pointer bg-[#E0F2FE] px-[16px] py-[6px] rounded-[20px]">
+                    class="font-semibold text-[#1a1a1a] cursor-pointer bg-[#E0F2FE] px-[16px] py-[6px] rounded-[20px] hover:bg-[#e8f6ff]">
                     Đăng nhập</p>
                 <p
                     class="font-semibold mx-[16px] text-[#1a1a1a] cursor-pointer bg-[#E0F2FE] px-[16px] py-[6px] rounded-[20px] viewMyRank_btn hidden">
@@ -367,7 +458,7 @@
                 <li
                     class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item active">
                     <i class="fa-solid fa-house text-[18px] mb-[4px]"></i>
-                    <p class="text-[12px] nav_title font-bold">Home</p>
+                    <p class="text-[12px] nav_title font-bold">Bài thi</p>
                 </li>
                 <li
                     class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
@@ -386,8 +477,8 @@
                 </li>
                 <li
                     class="flex z-10 items-center justify-center flex-col text-[#404040] w-[68px] h-[68px] rounded-[16px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] my-[2px] cursor-pointer nav_item">
-                    <i class="fa-solid fa-circle-question text-[18px] mb-[4px]"></i>
-                    <p class="text-[12px] nav_title font-bold">Hỏi đáp</p>
+                    <i class="fa-solid fa-blog text-[18px] mb-[4px]"></i>
+                    <p class="text-[12px] nav_title font-bold">Bài viết</p>
                 </li>
                 <span class="nav_item_wrapper w-[68px] h-[68px] bg-[#E0F2FE] rounded-[16px] absolute"></span>
             </ul>
@@ -397,61 +488,115 @@
                 <li>
                     <i class="nav_close_btn fa-solid fa-xmark text-[24px] cursor-pointer py-[10px] pl-[10px]"></i>
                 </li>
-                <li class="flex active my-[32px]">
+                <li class="flex active py-[16px] px-[8px] rounded-[6px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] active">
                     <i class="fa-solid fa-house text-[24px] mr-[6px]"></i>
-                    <p class="text-[18px] nav_title font-bold">Home</p>
+                    <p class="text-[18px] nav_title font-bold">Bài thi</p>
                 </li>
-                <li class="flex my-[32px]">
+                <li class="flex py-[16px] px-[8px] rounded-[6px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a]">
                     <i class="fa-solid fa-calendar text-[24px] mr-[6px]"></i>
                     <p class="text-[18px] nav_title font-bold">Lịch</p>
                 </li>
-                <li class="flex my-[32px]">
+                <li class="flex py-[16px] px-[8px] rounded-[6px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a]">
                     <i class="fa-solid fa-scale-balanced text-[24px] mr-[6px]"></i>
                     <p class="text-[18px] nav_title font-bold">Thể lệ</p>
                 </li>
-                <li class="flex my-[32px]">
+                <li class="flex py-[16px] px-[8px] rounded-[6px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a]">
                     <i class="fa-solid fa-ranking-star text-[24px] mr-[6px]"></i>
                     <p class="text-[18px] nav_title font-bold">Hạng</p>
                 </li>
-                <li class="flex text-[40px] my-[32px]">
-                    <i class="fa-solid fa-circle-question text-[24px] mr-[6px]"></i>
-                    <p class="text-[18px] nav_title font-bold">Hỏi đáp</p>
+                <li class="flex text-[40px] py-[16px] px-[8px] rounded-[6px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] border_top">
+                    <i class="fa-solid fa-blog text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Bài viết</p>
                 </li>
-                <li class="flex text-[40px] my-[32px]">
-                    <i class="fa-solid fa-circle-question text-[24px] mr-[6px]"></i>
+                <li class="flex text-[40px] py-[16px] px-[8px] rounded-[6px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a]">
+                    <i class="fa-solid fa-plus text-[24px] mr-[6px]"></i>
                     <p class="text-[18px] nav_title font-bold">Viết bài</p>
+                </li>
+                <li class="flex text-[40px] py-[16px] px-[8px] rounded-[6px] hover:bg-[#e8f6ff] hover:text-[#1a1a1a] border_top">
+                    <i class="fa-solid fa-circle-question text-[24px] mr-[6px]"></i>
+                    <p class="text-[18px] nav_title font-bold">Hướng dẫn</p>
                 </li>
             </ul>
         </nav>
-        <div class="ml-[40px] w-full pb-[64px]">
-            <div class="">
-                <p class="text-[24px] mb-[16px] font-bold board_title mr-[4px]">
-                    Bảng xếp hạng khối: 
-                    <select class="font-bold text-[#1a1a1a] rounded-[8px] change_grade">
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select>
-                </p>
-                <div class="board board_rank flex border-solid border-[1px] border-[#e8e8e8] rounded-[6px] font-bold overflow-hidden w-full">
+        <div class="ml-[40px] w-full pb-[64px] min-h-[60vh]">
+            <div class="flex items-center relative justify-evenly slider box-border p-[8px]">
+                <div class="mr-[16px] z-10 slider_text mt-[2%]">
+                    <p class="text-[60px] font-black">Hello Sơn!</p>
+                    <p>Cùng bắt đầu một ngày học tập mới thất bùng nổ nào ^^</p>
+                </div>
+                <img class="w-[220px] z-10 slider_modal mb-[-8px]" src="../assets/icon_human_chemiscal.svg" alt="">
+                <div class="bg-[#E0F2FE] w-full absolute bottom-0 h-[80%] rounded-[16px] slider_background"></div>
+            </div>
+            <div class="mt-[32px]">
+                <p class="mb-[16px] text-[24px] font-bold board_title">Vòng thi hiện tại: 1</p>
+                <div
+                    class="board flex border-solid border-[1px] border-[#e8e8e8] rounded-[6px] font-bold overflow-hidden">
                     <ul class="w-[25%]">
-                        <li class="h-[60px] flex items-center justify-center bg-[#E0F2FE] board_col_header">TÊN</li>
-                        <li class="h-[60px] flex items-center justify-center p-[2px] board_col_item">Trịnh Văn Sơn</li>
+                        <li class="w-[100%] h-[60px] flex items-center justify-center bg-[#E0F2FE] board_col_header">STT
+                        </li>
+                        <li class="w-[100%] h-[60px] flex items-center justify-center board_col_item p-[2px]">1</li>
+                        <li class="w-[100%] h-[60px] flex items-center justify-center board_col_item p-[2px]">2</li>
+                        <li class="w-[100%] h-[60px] flex items-center justify-center board_col_item p-[2px]">3</li>
                     </ul>
                     <ul class="w-[25%]">
-                        <li class="h-[60px] flex items-center justify-center bg-[#E0F2FE] board_col_header">TRƯỜNG</li>
-                        <li class="h-[60px] flex items-center justify-center p-[2px] board_col_item">An Sinh</li>
+                        <li class="h-[60px] flex items-center justify-center bg-[#E0F2FE] board_col_header">BÀI THI
+                        </li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">
+                            <span
+                                class="bg-[#38B6FF] hover:bg-[#6dc9ff] cursor-pointer text-[#fff] px-[16px] py-[8px] rounded-[6px] btn startExam_btn">Làm</span>
+                        </li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">
+                            <span
+                                class="bg-[#38B6FF] hover:bg-[#6dc9ff] cursor-pointer text-[#fff] px-[16px] py-[8px] rounded-[6px] btn startExam_btn">Làm</span>
+                        </li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">
+                            <span
+                                class="bg-[#38B6FF] hover:bg-[#6dc9ff] cursor-pointer text-[#fff] px-[16px] py-[8px] rounded-[6px] btn startExam_btn">Làm</span>
+                        </li>
                     </ul>
                     <ul class="w-[25%]">
                         <li class="h-[60px] flex items-center justify-center bg-[#E0F2FE] board_col_header">ĐIỂM</li>
-                        <li class="h-[60px] flex items-center justify-center p-[2px] board_col_item">
-                            100
-                        </li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">100</li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">90</li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">50</li>
                     </ul>
                     <ul class="w-[25%]">
-                        <li class="h-[60px] flex items-center justify-center bg-[#E0F2FE] board_col_header">THỜI GIAN</li>
-                        <li class="h-[60px] flex items-center justify-center p-[2px] board_col_item">
-                            1m
+                        <li class="h-[60px] flex items-center justify-center bg-[#E0F2FE] board_col_header">THỜI GIAN
                         </li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">7:20</li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">3:00</li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">4:50</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-[32px]">
+                <p class="mb-[16px] text-[24px] font-bold board_title">Lịch sử thi các vòng</p>
+                <div
+                    class="board flex border-solid border-[1px] border-[#e8e8e8] rounded-[6px] font-bold overflow-hidden">
+                    <ul class="w-[33.3333%]">
+                        <li class="h-[60px] flex items-center justify-center bg-[#E0F2FE] board_col_header">Vòng</li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">
+                            1
+                        </li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">
+                            2
+                        </li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">
+                            3
+                        </li>
+                    </ul>
+                    <ul class="w-[33.3333%]">
+                        <li class="h-[60px] flex items-center justify-center bg-[#E0F2FE] board_col_header">ĐIỂM</li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">100</li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">90</li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">50</li>
+                    </ul>
+                    <ul class="w-[33.3333%]">
+                        <li class="h-[60px] flex items-center justify-center bg-[#E0F2FE] board_col_header">THỜI GIAN
+                        </li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">7:20</li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">3:00</li>
+                        <li class="h-[60px] flex items-center justify-center board_col_item p-[2px]">4:50</li>
                     </ul>
                 </div>
             </div>
@@ -529,7 +674,7 @@
         </ul>
         <p>Copyright © 2022 - Trịnh Văn Sơn & Nguyễn Phúc Thanh - Học sinh lớp 9A trường THCS An Sinh</p>
     </footer>
-    <div class="fixed top-[40%] right-0 z-10">
+    <div class="fixed top-[40%] right-0 z-10 tutorial_wrapper">
         <div class="tutorial_open_btn cursor-pointer">
             <div
                 class="bg-[#E0F2FE] text-[#1a1a1a] rotate-[-90deg] flex items-center px-[16px] py-[8px] rounded-tl-[8px] rounded-tr-[8px]">

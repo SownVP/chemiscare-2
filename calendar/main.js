@@ -1,6 +1,25 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 let user;
+if(screen.width <= 1000){
+    $$('.startExam_btn').forEach(item =>{
+        item.innerText = "Làm";
+    })
+    $('.nav_main').style.display = "none";
+}
+window.addEventListener("resize", ()=>{
+    if(screen.width <= 1000){
+        $$('.startExam_btn').forEach(item =>{
+            item.innerText = "Làm";
+        });
+        $('.nav_main').style.display = "none";
+    }else{
+        $$('.startExam_btn').forEach((item, id) =>{
+            item.innerText = "Làm bài " + (id + 1);
+        });
+        $('.nav_main').style.display = "block";
+    }
+})
 function getData(){
     fetch('http://localhost:3000/users')
         .then(res => res.json())

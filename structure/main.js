@@ -1,3 +1,4 @@
+
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 let user;
@@ -15,15 +16,16 @@ window.addEventListener("resize", ()=>{
     }
 })
 function getData() {
-    fetch('http://localhost:3000/data/')
-        .then(res => res.json())
-        .then(
-            (data) => {
-                postData = data;
-                $('body').classList.remove('loading');
-                start();
-            }
-        )
+    // fetch('http://localhost:3000/data/')
+    //     .then(res => res.json())
+    //     .then(
+    //         (data) => {
+    //             postData = data;
+    //             $('body').classList.remove('loading');
+    //             start();
+    //         }
+    //     )
+    start();
 }
 getData();
 
@@ -109,6 +111,12 @@ function addEvent() {
             handleClose($('.user_menu'), 'block');
         }
     }
+    $('.nav_open_btn').onclick = ()=>{
+        handleOpen($('.nav_onTablet'), 'block');
+    }
+    $('.nav_close_btn').onclick = ()=>{
+        handleClose($('.nav_onTablet'), 'block');
+    }
     $('.tutorial_open_btn').onclick = (e) => {
         if ($('.tutorial_start_wrapper').classList.contains('hidden')) {
             handleOpen($('.tutorial_start_wrapper'), 'flex');
@@ -121,15 +129,37 @@ function addEvent() {
             handleOpen($('.tutorial_open_btn'), 'block');
         }
     }
-    // $('.comment_writeInput').onkeyup = ()=>{
-    //     if($('.comment_writeInput').value != ''){
-    //         $('.comment_sentBtn').style.backgroundColor = '#38B6FF';
-    //         $('.comment_sentBtn').classList.add('btn');
-    //     }else{
-    //         $('.comment_sentBtn').style.backgroundColor = '#ccc';
-    //         $('.comment_sentBtn').classList.remove('btn');
-    //     }
-    // }
+    $('.comment_writeInput').onkeyup = ()=>{
+        if($('.comment_writeInput').value != ''){
+            $('.comment_sentBtn').style.backgroundColor = '#38B6FF';
+            $('.comment_sentBtn').classList.add('btn');
+        }else{
+            $('.comment_sentBtn').style.backgroundColor = '#ccc';
+            $('.comment_sentBtn').classList.remove('btn');
+        }
+    }
+    $$('.comment_Icon__open').forEach(function (elm) {
+        elm.addEventListener('click', function () {
+            $('.comment_Wrapper').style.display = 'block'
+        })
+    })
+
+    $('.comment_Icon__close').addEventListener('click', function () {
+        $('.comment_Wrapper').style.display = 'none'
+    })
+
+    $$('.post_Reaction').forEach(function (post_Reaction, index) {
+        post_Reaction.addEventListener('click', function () {
+            $$('.post_Reaction__active')[index].style.display = 'inline';
+            post_Reaction.style.display = 'none'
+        })
+    })
+    $$('.post_Reaction__active').forEach(function (post_Reaction__active, index) {
+        post_Reaction__active.addEventListener('click', function () {
+            $$('.post_Reaction')[index].style.display = 'inline';
+            post_Reaction__active.style.display = 'none'
+        })
+    })
 }
 function handleDarkMode() {
     localStorage.displayMode = 'dark';

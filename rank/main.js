@@ -1,6 +1,18 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 let user;
+handleDarkMode();
+setCss();
+if(screen.width <= 1000){
+    $('.nav_main').style.display = "none";
+}
+window.addEventListener("resize", ()=>{
+    if(screen.width <= 1000){
+        $('.nav_main').style.display = "none";
+    }else{
+        $('.nav_main').style.display = "block";
+    }
+})
 function getData(){
     fetch('http://localhost:3000/users')
         .then(res => res.json())
@@ -15,7 +27,7 @@ getData();
 
 function start(){
     addEvent();
-    handleDarkMode();
+    
     setData();
 }
 start();
@@ -57,6 +69,12 @@ function addEvent(){
             handleOpen($('.tutorial_open_btn'), 'block');
         }
     }
+    $('.nav_open_btn').onclick = ()=>{
+        handleOpen($('.nav_onTablet'), 'block');
+    }
+    $('.nav_close_btn').onclick = ()=>{
+        handleClose($('.nav_onTablet'), 'block');
+    }
 }
 function handleDarkMode(){
     $('body').classList.add('darkmode');
@@ -87,4 +105,8 @@ function handleOpen(elm, status){
 function handleClose(elm, status){
     elm.classList.remove(status);
     elm.classList.add('hidden');
+}
+function setCss(){
+    $('.nav_item_wrapper').style.top = `${$('.nav_item.active').offsetTop}px`;
+    $('.tutorial_open_btn').style.transform = `translateX(${($('.tutorial_open_btn').clientWidth - $('.tutorial_open_btn').clientHeight) / 2}px)`;
 }
